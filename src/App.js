@@ -1,25 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import INVOICE from "./json/invoices.json";
+import PLAYS from "./json/play.json"
+import { statement } from "./refactor/01";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  console.log("INVOICE", statement(INVOICE[0], PLAYS));
+  return <div className="App">
+    {statement(INVOICE[0], PLAYS)}
+  </div>;
 }
 
 export default App;
